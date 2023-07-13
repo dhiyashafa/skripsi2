@@ -17,7 +17,7 @@ class CreateSubKriteriaTable extends Migration
             $table->id();
             $table->foreignId('kriterias_id')->constrained();
             $table->string('nama');
-            $table->integer('hasil');
+            $table->integer('nilai');
             $table->timestamps();
         });
     }

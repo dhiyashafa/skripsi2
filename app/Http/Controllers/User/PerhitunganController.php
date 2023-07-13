@@ -18,7 +18,7 @@ class PerhitunganController extends Controller
     public function index()
     {
         
-        return view('user.penilaian.index');
+        return view('user.perhitungan.index');
     }
 
     //     $kriteria = [
@@ -34,7 +34,7 @@ class PerhitunganController extends Controller
         //     'weight' => ['required','numeric']
         //     'jenis' => 'required',
         // ]);
-        return view('user.alternatif.create');
+        return view('user.perhitungan.create');
     }
 
     public function store(Request $request)
@@ -53,7 +53,7 @@ class PerhitunganController extends Controller
             'nomer' => $request->get('nomer')
         ]);
 
-        return redirect()->route('alternatif.index');
+        return redirect()->route('perhitungan.index');
     }
 
     public function show(Alternatif $alternatif)
@@ -61,7 +61,7 @@ class PerhitunganController extends Controller
         return $alternatif;
     }
 
-    public function edit(Alternatif $alternatif, $id)
+    public function edit(Perhitungan $perhitungan, $id)
     {
         $alternatif= Alternatif::find($id);
 

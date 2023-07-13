@@ -65,11 +65,12 @@
                             <a class="btn btn-xs btn-info" href="{{ route('kriteria.edit',$kriterias->id) }}">
                                 {{ trans('global.edit') }}</a>
 
-                            <form action="{{ route('kriteria.destroy', $kriterias->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                            <form action="{{ route('kriteria.destroy', $kriterias->id) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-xs btn-danger" type="submit">Delete</button>
                             </form>
+
                         </td>
                     </tr>
                     @endforeach
